@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+:root {
+  --body-bg-color: #dce4e3;
+  --green: #18c29c;
+  --light-green: #8ed7c6;
+  --light-grey: #dce4e3;
+  --text-color: #084236;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 78px;
+  background: var(--green);
+  padding: 6px 14px 6px 14px;
+  z-index: 99;
+  transition: all 0.5s ease;
+  text-align: center;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar .logo-details {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.sidebar .logo-details .icon {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.sidebar.open .logo-details .icon {
+  opacity: 1;
+}
+
+/* faltam adicionar e editar */
+.sidebar .logo-details #btn {
+  position: absolute;
+  right: 14px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.sidebar.open .logo-details #btn {
+  text-align: right;
+}
+
+.sidebar nav .nav-list {
+  margin-top: 30px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 50px;
+  left: 14px;
+}
+
+.sidebar li {
+  margin: 8px 0;
+  list-style: none;
+}
+
+.sidebar li .tooltip {
+  position: relative;
+  top: -30px;
+  left: 28px;
+  left: calc(100% + 15 px);
+  z-index: 3;
+  background: var(--light-green);
+  box-shadow: 0 5px 10px rgb(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.9375em;
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: 0s;
+  opacity: 0;
+}
+
+.sidebar li:hover .tooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+
+.sidebar.open li .tooltip {
+  display: none;
+}
+
+.sidebar #search {
+  position: absolute;
+  top: -60px;
+  left: -14px;
+  font-size: 15px;
+  color: var(--text-color);
+  font-weight: 400;
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  border-radius: 12px;
+  background: var(--light-green) url('./images/search.svg') no-repeat center;
+  transition: all 0.5s ease;
+}
+
+.sidebar.open input {
+  padding: 0 20px 0 50px;
+  border: none;
+  border-left: 14px solid transparent;
+}
+
+.sidebar input:hover {
+  background: var(--light-grey);
+}
+.sidebar.open input:hover {
+  background: var(--light-grey);
+}
+
+.sidebar li a {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  align-items: center;
+  background: var(--green);
+  transition: all 0.4s ease;
+  line-height: 2.125rem;
+}
+
+.sidebar li a:hover {
+  background: var(--light-grey);
+}
+
+.sidebar li a .links_name {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.sidebar.open li a .links_name {
+  opacity: 1;
+  pointer-events: auto;
+  margin-left: 13px;
+  font-size: 15px;
+}
+
+.sidebar li a:hover .links_name,
+.sidebar li a:hover img {
+  transition: all 0.5s ease;
+  color: #11101d;
+}
+
+.sidebar li.profile {
+  position: fixed;
+  height: 60px;
+  width: 78px;
+  left: 0;
+  bottom: -8px;
+  padding: 10px 14px;
+  background: var(--light-green) url('./images/log-out.svg') no-repeat center;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  border-right: 5px solid var(--light-green);
+}
+
+.sidebar.open li.profile {
+  width: 250px;
+  background-position: right;
+}
+
+.sidebar li .profile-details {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.sidebar.open li .profile-details {
+  background-image: url('./images/photo.jpg');
+  background-position: right 30% bottom 70%;
+  height: 45px;
+  width: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.sidebar li.profile .name,
+.sidebar li.profile .job {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-color);
+  white-space: nowrap;
+  position: relative;
+  left: 60px;
+}
+
+.sidebar li.profile .job {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.home-section {
+  position: relative;
+  background: var(--body-bg-color);
+  min-height: 100vh;
+  top: 0;
+  left: 78px;
+  width: calc(100%-78px);
+  z-index: 2;
+  width: all 0.5s ease;
+}
+
+.sidebar.open ~ .home-section {
+  left: 250px;
+  width: calc(100%-250px);
+  transition: all 0.5s ease;
+}
+
+.home-section .text {
+  display: inline-block;
+  color: var(--text-color);
+  font-size: 25px;
+  font-weight: 500;
+  margin: 18px;
+}
+
+@media (max-width: 420px) {
+  .sidebar li .tooltip {
+    display: none;
+  }
+}

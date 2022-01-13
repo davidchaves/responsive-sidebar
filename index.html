@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Responsive Sidebar Menu | David Chaves</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <img class="icon" src="./images/logo.svg" />
+        <img id="btn" src="./images/menu.svg" />
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li>
+            <input id="search" type="search" placeholder="" maxlength="14" />
+            <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/grid.svg" />
+              <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/pet.svg" />
+              <span class="links_name">Pets</span>
+            </a>
+            <span class="tooltip">Pets</span>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/user.svg" />
+              <span class="links_name">Clients</span>
+            </a>
+            <span class="tooltip">Clients</span>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/vet.svg" />
+              <span class="links_name">Vets</span>
+            </a>
+            <span class="tooltip">Vets</span>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./images/settings.svg" />
+              <span class="links_name">Settings</span>
+            </a>
+            <span class="tooltip">Settings</span>
+          </li>
+          <li class="profile">
+            <div class="profile-details">
+              <div class="name_job">
+                <div class="name open">David Chaves</div>
+                <div class="job">Web Dev</div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <section class="home-section">
+      <div class="text">Dashboard</div>
+    </section>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
